@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  NgZone,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import {
   ReactiveFormsModule,
   FormGroup,
@@ -31,23 +39,31 @@ export class BaseContactComponent implements OnInit, OnDestroy {
 
   private turnstileVerified = false;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(
+    private ngZone: NgZone,
+    @Inject(PLATFORM_ID) private platformId: object,
+  ) {}
 
   ngOnInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     window.turnstileFinished = () => {
       this.ngZone.run(() => {
         this.turnstileVerified = true;
       });
     };
 
-    const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
+    if (!document.querySelector('script[src*="turnstile"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   }
 
   ngOnDestroy() {
+    if (!isPlatformBrowser(this.platformId)) return;
     delete (window as any).turnstileFinished;
   }
 
@@ -55,7 +71,7 @@ export class BaseContactComponent implements OnInit, OnDestroy {
     return this.contactForm.valid && this.turnstileVerified;
   }
 
-  async onSubmit() {
+  onSubmit() {
     if (!this.isFormValid) return;
     (
       document.querySelector('form[name="contact"]') as HTMLFormElement
