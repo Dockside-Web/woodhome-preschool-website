@@ -69,9 +69,7 @@ export class BaseContactComponent implements OnInit, OnDestroy {
       script.async = true;
       script.defer = true;
       document.head.appendChild(script);
-      // Script is fresh, auto-render will handle it
     } else {
-      // Script already loaded, we need to manually render the widget
       this.renderTurnstile();
     }
   }
@@ -81,11 +79,14 @@ export class BaseContactComponent implements OnInit, OnDestroy {
       if (window.turnstile) {
         window.turnstile.render('.cf-turnstile', {
           sitekey: '0x4AAAAAADBUdaxCoaxaoWDk',
-          callback: 'turnstileFinished',
+          callback: () => {
+            this.ngZone.run(() => {
+              this.turnstileVerified = true;
+            });
+          },
           theme: 'light',
         });
       } else {
-        // turnstile global not ready yet, retry shortly
         setTimeout(() => render(), 100);
       }
     };
