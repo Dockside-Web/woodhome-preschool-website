@@ -37,6 +37,9 @@ export class BaseContactComponent implements OnInit, OnDestroy {
     window.turnstileFinished = () => {
       this.ngZone.run(() => {
         this.turnstileVerified = true;
+        console.log('turnstileVerified:', this.turnstileVerified);
+        console.log('form valid:', this.contactForm.valid);
+        console.log('isFormValid:', this.isFormValid);
       });
     };
   }
