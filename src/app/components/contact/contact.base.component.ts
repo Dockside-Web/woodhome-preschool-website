@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import {
   ReactiveFormsModule,
   FormGroup,
@@ -31,14 +31,17 @@ export class BaseContactComponent implements OnInit, OnDestroy {
 
   private turnstileVerified = false;
 
+  constructor(private ngZone: NgZone) {}
+
   ngOnInit() {
     window.turnstileFinished = () => {
-      this.turnstileVerified = true;
+      this.ngZone.run(() => {
+        this.turnstileVerified = true;
+      });
     };
   }
 
   ngOnDestroy() {
-    // Clean up the global callback when the component is destroyed
     delete (window as any).turnstileFinished;
   }
 
