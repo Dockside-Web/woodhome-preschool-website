@@ -20,6 +20,8 @@ declare global {
   }
 }
 
+let turnstileScriptLoaded = false;
+
 @Component({
   selector: 'app-contact-base',
   standalone: true,
@@ -53,7 +55,11 @@ export class BaseContactComponent implements OnInit, OnDestroy {
       });
     };
 
-    if (!document.querySelector('script[src*="turnstile"]')) {
+    if (
+      !turnstileScriptLoaded &&
+      !document.querySelector('script[src*="turnstile"]')
+    ) {
+      turnstileScriptLoaded = true;
       const script = document.createElement('script');
       script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
       script.async = true;
