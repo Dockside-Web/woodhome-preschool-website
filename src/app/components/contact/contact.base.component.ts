@@ -17,6 +17,10 @@ import {
 declare global {
   interface Window {
     turnstileFinished: () => void;
+    turnstile: {
+      render: (selector: string, options: object) => void;
+      reset: (selector?: string) => void;
+    };
   }
 }
 
@@ -65,7 +69,27 @@ export class BaseContactComponent implements OnInit, OnDestroy {
       script.async = true;
       script.defer = true;
       document.head.appendChild(script);
+      // Script is fresh, auto-render will handle it
+    } else {
+      // Script already loaded, we need to manually render the widget
+      this.renderTurnstile();
     }
+  }
+
+  private renderTurnstile() {
+    const render = () => {
+      if (window.turnstile) {
+        window.turnstile.render('.cf-turnstile', {
+          sitekey: '0x4AAAAAADBUdaxCoaxaoWDk',
+          callback: 'turnstileFinished',
+          theme: 'light',
+        });
+      } else {
+        // turnstile global not ready yet, retry shortly
+        setTimeout(() => render(), 100);
+      }
+    };
+    render();
   }
 
   ngOnDestroy() {
