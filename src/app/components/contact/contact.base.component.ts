@@ -37,11 +37,14 @@ export class BaseContactComponent implements OnInit, OnDestroy {
     window.turnstileFinished = () => {
       this.ngZone.run(() => {
         this.turnstileVerified = true;
-        console.log('turnstileVerified:', this.turnstileVerified);
-        console.log('form valid:', this.contactForm.valid);
-        console.log('isFormValid:', this.isFormValid);
       });
     };
+
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
   }
 
   ngOnDestroy() {
