@@ -14,6 +14,8 @@ import {
   Validators,
 } from '@angular/forms';
 
+import { contactInfo } from '../../data/info';
+
 declare global {
   interface Window {
     turnstileFinished: () => void;
@@ -34,6 +36,8 @@ let turnstileScriptLoaded = false;
   styleUrls: ['./contact.base.component.css'],
 })
 export class BaseContactComponent implements OnInit, OnDestroy {
+  contactInfo = contactInfo;
+
   contactForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),

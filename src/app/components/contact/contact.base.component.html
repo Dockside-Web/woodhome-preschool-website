@@ -165,7 +165,11 @@
             </svg>
             <div class="contact-details-text">
               <h4 class="contact-label">Phone</h4>
-              <p class="contact-value">(410) 668-7587</p>
+              <p class="contact-value">
+                <a [href]="contactInfo.phoneHref" class="contact-link">
+                  {{ contactInfo.phone }}
+                </a>
+              </p>
             </div>
           </div>
 
@@ -185,7 +189,11 @@
             </svg>
             <div class="contact-details-text">
               <h4 class="contact-label">Email</h4>
-              <p class="contact-value">woodhome.preschool&#64;gmail.com</p>
+              <p class="contact-value">
+                <a [href]="'mailto:' + contactInfo.email" class="contact-link">
+                  {{ contactInfo.email }}
+                </a>
+              </p>
             </div>
           </div>
         </div>

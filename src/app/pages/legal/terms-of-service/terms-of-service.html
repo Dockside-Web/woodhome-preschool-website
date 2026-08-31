@@ -1,0 +1,240 @@
+<app-hero-base [title]="'Terms of Service'"> </app-hero-base>
+
+<main class="legal-page-wrapper">
+  <div class="legal-card">
+    <div class="legal-content">
+      <!-- Last Updated Date -->
+      <div class="legal-banner">
+        <p class="legal-banner-text">
+          Last Updated:
+          <span class="legal-highlight">{{ lastUpdatedDate }}</span>
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <div>
+        <p class="legal-text">
+          These Terms of Service ("Terms") govern your access to and use of the
+          {{ contactInfo.schoolNameFormal }} website (the "Site"). By accessing
+          or using the Site, you agree to these Terms.
+        </p>
+      </div>
+
+      <!-- Section 1 -->
+      <section>
+        <h2 class="legal-heading">1) Who We Are</h2>
+        <p class="legal-text">
+          {{ contactInfo.schoolNameFormal }} ("{{ contactInfo.schoolName }}",
+          "we," "us," or "our") provides information about our website
+          development services and a way to contact us.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h2 class="legal-heading">2) Eligibility</h2>
+        <p class="legal-text">
+          The Site is intended for users age 13 and older. By using the Site,
+          you represent that you are at least 13 years old.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section>
+        <h2 class="legal-heading">3) Permitted Use</h2>
+        <p class="legal-text">
+          You may use the Site for lawful purposes and in accordance with these
+          Terms. You agree not to misuse the Site, interfere with its operation,
+          probe or scan for vulnerabilities, attempt to access non-public areas
+          or systems, or use automated means to access the Site in a way that
+          degrades performance.
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section>
+        <h2 class="legal-heading">4) Contacting Us</h2>
+        <p class="legal-text">
+          If you contact us through the Site, you agree that the information you
+          provide is accurate and that you have the right to provide it. You
+          also agree not to submit unlawful, infringing, or harmful content.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section>
+        <h2 class="legal-heading">5) No User-Generated Content</h2>
+        <p class="legal-text">
+          The Site does not allow public posting or user-generated content (such
+          as comments, reviews, or uploads). Content on the Site is provided and
+          maintained by
+          {{ contactInfo.schoolNameFormal }}.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section>
+        <h2 class="legal-heading">
+          6) No Client Relationship; Separate Service Agreement
+        </h2>
+        <p class="legal-text">
+          Browsing the Site or contacting us does not create a client
+          relationship or obligate us to provide services. Any professional
+          services we provide (including scope, timelines, payments, refunds,
+          intellectual property, and deliverables) are governed by a separate
+          written service agreement between
+          {{ contactInfo.schoolNameFormal }} and the client. If there is any
+          conflict between these Terms and a signed service agreement, the
+          service agreement controls.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section>
+        <h2 class="legal-heading">7) Intellectual Property (Site Content)</h2>
+        <p class="legal-text">
+          The Site and its content (including text, graphics, logos, and design)
+          are owned by
+          {{ contactInfo.schoolNameFormal }} or our licensors and are protected
+          by applicable intellectual property laws. You may not copy, reproduce,
+          modify, distribute, or create derivative works from the Site without
+          our prior written permission, except as permitted by law.
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section>
+        <h2 class="legal-heading">8) Third-Party Services and Links</h2>
+        <p class="legal-text">
+          The Site may incorporate or link to third-party services (for example,
+          Cloudflare for hosting, Basin for form handling, and Google Maps
+          embeds). Third-party services are governed by their own terms and
+          policies, and we are not responsible for third-party content,
+          practices, or availability.
+        </p>
+        <div class="legal-callout">
+          <p class="legal-callout-text">
+            <span class="legal-bold">Note:</span> We use Cloudflare for website
+            hosting and Basin for contact form processing. Their terms can be
+            found at
+            <a
+              href="https://www.cloudflare.com/terms/"
+              class="legal-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >cloudflare.com/terms</a
+            >
+            and
+            <a
+              href="https://usebasin.com/terms"
+              class="legal-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >usebasin.com/terms</a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 9 -->
+      <section>
+        <h2 class="legal-heading">9) Disclaimers</h2>
+        <p class="legal-text">
+          The Site is provided on an "as is" and "as available" basis. We do not
+          warrant that the Site will be uninterrupted, error-free, or secure, or
+          that any content is accurate, complete, or current. Your use of the
+          Site is at your own risk.
+        </p>
+      </section>
+
+      <!-- Section 10 -->
+      <section>
+        <h2 class="legal-heading">10) Limitation of Liability</h2>
+        <p class="legal-text">
+          To the maximum extent permitted by law,
+          {{ contactInfo.schoolNameFormal }} will not be liable for any
+          indirect, incidental, special, consequential, or punitive damages, or
+          any loss of profits, revenue, data, or goodwill, arising out of or
+          related to your use of (or inability to use) the Site.
+        </p>
+      </section>
+
+      <!-- Section 11 -->
+      <section>
+        <h2 class="legal-heading">11) Indemnification</h2>
+        <p class="legal-text">
+          You agree to indemnify and hold harmless
+          {{ contactInfo.schoolNameFormal }} from and against claims,
+          liabilities, damages, losses, and expenses (including reasonable
+          attorneys' fees) arising from your misuse of the Site or violation of
+          these Terms.
+        </p>
+      </section>
+
+      <!-- Section 12 -->
+      <section>
+        <h2 class="legal-heading">12) Termination / Restriction of Access</h2>
+        <p class="legal-text">
+          We may suspend or restrict your access to the Site (including blocking
+          access from certain IP addresses) if we reasonably believe you are
+          violating these Terms, attempting to harm the Site or other users, or
+          using the Site in an unlawful manner. This section does not limit any
+          other rights or remedies we may have.
+        </p>
+      </section>
+
+      <!-- Section 13 -->
+      <section>
+        <h2 class="legal-heading">13) Accessibility and Availability</h2>
+        <p class="legal-text">
+          We aim to keep the Site available and working for visitors, but we do
+          not guarantee unclear access. The Site may be temporarily unavailable
+          due to maintenance, updates, hosting outages, or circumstances outside
+          our control.
+        </p>
+      </section>
+
+      <!-- Section 14 -->
+      <section>
+        <h2 class="legal-heading">14) Changes to the Site or Terms</h2>
+        <p class="legal-text">
+          We may modify the Site or these Terms at any time. Updated Terms will
+          be posted on this page with a new "Last Updated" date. Continued use
+          of the Site after changes become effective means you accept the
+          updated Terms.
+        </p>
+      </section>
+
+      <!-- Section 15 -->
+      <section>
+        <h2 class="legal-heading">15) Governing Law</h2>
+        <p class="legal-text">
+          These Terms are governed by and construed in accordance with
+          applicable laws, without regard to conflict-of-laws principles.
+        </p>
+      </section>
+
+      <!-- Contact Us -->
+      <section class="legal-contact-box">
+        <h2 class="legal-heading">Contact Us</h2>
+        <div class="legal-contact-details">
+          <p class="legal-business-name">
+            {{ contactInfo.schoolNameFormal }}
+          </p>
+          <p>
+            Email:
+            <a [href]="'mailto:' + contactInfo.email" class="legal-link">{{
+              contactInfo.email
+            }}</a>
+          </p>
+          <p>
+            Phone:
+            <a [href]="contactInfo.phoneHref" class="legal-link">{{
+              contactInfo.phone
+            }}</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>

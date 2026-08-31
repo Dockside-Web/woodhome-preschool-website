@@ -1,54 +1,127 @@
-<app-hero-base [title]="'Parent Resources'">
-</app-hero-base>
+<app-hero-base [title]="'Parent Resources'"> </app-hero-base>
 
 <section class="payment-section">
-    <div class="payment-container">
-        <h1 class="parent-titles">Tuition Payment Options</h1>
-        <ul class="bullet-points">
-            <li>Venmo &#64;woodhomeprek</li>
-            <li>Zelle &#64;woodhome.preschool&#64;gmail.com</li>
-            <li>Credit Card (fees apply; inquire directly for payment instructions)</li>
-            <li>Cash/Check/Money Order made payable to "Woodhome Preschool Center." You will receive a receipt for cash
-                payments. Please keep this receipt for your records.</li>
-        </ul>
+  <div class="payment-container">
+    <h1 class="parent-titles">Tuition Payment Options</h1>
+    <ul class="bullet-points">
+      <li>Venmo: &#64;woodhomeprek</li>
+      <li>Zelle: {{ contactInfo.email }}</li>
+      <li>
+        Credit Card (fees apply; inquire directly for payment instructions)
+      </li>
+      <li>
+        Cash/Check/Money Order made payable to "{{
+          contactInfo.schoolNameFormal
+        }}". You will receive a receipt for cash payments. Please keep this
+        receipt for your records.
+      </li>
+    </ul>
 
-        <h1 class="parent-titles">Inclement Weather Policy</h1>
-        <p>Woodhome Preschool Center follows Baltimore County Public School (BCPS) closures, within reason.</p>
-        <ul class="bullet-points">
-            <li>If BCPS closes: NO programming.</li>
-            <li>If BCPS opens 1 hour late: NO before care; school opens at regular time.</li>
-            <li>If BCPS opens 2 hours late: NO before care or morning school; we will open at 12pm.</li>
-            <li>If BCPS closes 2 hours early: It is at the discretion of Woodhome Preschool Center to close school
-                early.</li>
-            <li>The school calendar allows for up to 4 full snow days.</li>
-        </ul>
-        <p>There are some situations where Woodhome Preschool Center will open even when BCPS is not open. Refer to
-            school-wide communication channels for updates on openings and closures.</p>
+    <h1 class="parent-titles">Inclement Weather Policy</h1>
+    <p>
+      {{ contactInfo.schoolNameFormal }} follows Baltimore County Public School
+      (BCPS) closures, within reason.
+    </p>
+    <ul class="bullet-points">
+      <li>If BCPS closes: NO programming.</li>
+      <li>
+        If BCPS opens 1 hour late: NO before care; school opens at regular time.
+      </li>
+      <li>
+        If BCPS opens 2 hours late: NO before care or morning school; we will
+        open at 12pm.
+      </li>
+      <li>
+        If BCPS closes 2 hours early: It is at the discretion of
+        {{ contactInfo.schoolNameFormal }}
+        to close school early.
+      </li>
+      <li>The school calendar allows for up to 4 full snow days.</li>
+    </ul>
+    <p>
+      There are some situations where {{ contactInfo.schoolNameFormal }} will
+      open even when BCPS is not open. Refer to school-wide communication
+      channels for updates on openings and closures.
+    </p>
 
-        <h1 class="parent-titles">Informational Documents</h1>
-        <ul class="bullet-points">
-            <li><a href="/assets/docs/Info-Doc-Parent-Handbook.pdf" target="_blank"
-                    rel="noopener noreferrer">Parent Handbook</a></li>
-            <li><a href="/assets/docs/Info-Doc-Curriculum-Overview.pdf" target="_blank"
-                    rel="noopener noreferrer">Curriculum Overview</a></li>
-            <li><a href="/assets/docs/Info-Doc-Registration-Form.pdf" target="_blank"
-                    rel="noopener noreferrer">Registration Form</a></li>
-            <li><a href="/assets/docs/Info-Doc-Enrollment-Checklist.pdf" target="_blank"
-                    rel="noopener noreferrer">Enrollment Checklist</a></li>
-            <li><a href="/assets/docs/Info-Doc-Personal-Profile.pdf" target="_blank"
-                    rel="noopener noreferrer">Personal Profile</a>
-                </li>
-        </ul>
+    <h1 class="parent-titles">Informational Documents</h1>
+    <ul class="bullet-points">
+      <li>
+        <a
+          href="/assets/docs/Info-Doc-Parent-Handbook.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Parent Handbook</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/Info-Doc-Curriculum-Overview.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Curriculum Overview</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/Info-Doc-Registration-Form.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Registration Form</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/Info-Doc-Enrollment-Checklist.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Enrollment Checklist</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/Info-Doc-Personal-Profile.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Personal Profile</a
+        >
+      </li>
+    </ul>
 
-        <h1 class="parent-titles">State Mandated Forms</h1>
-        <ul class="bullet-points">
-            <li><a href="/assets/docs/State-Form-Health-Inventory.pdf" target="_blank" rel="noopener noreferrer">Health Inventory</a></li>
-            <li><a href="/assets/docs/State-Form-MDH-Immunization.pdf" target="_blank"
-                    rel="noopener noreferrer">MDH Immunization Certificate</a></li>
-            <li><a href="/assets/docs/State-Form-MDH-Lead-Certificate.pdf" target="_blank"
-                    rel="noopener noreferrer">MDH Lead Certificate</a></li>
-            <li><a href="/assets/docs/State-Form-Emergency-Form.pdf" target="_blank"
-                    rel="noopener noreferrer">Emergency Form</a></li>
-        </ul>
-    </div>
+    <h1 class="parent-titles">State Mandated Forms</h1>
+    <ul class="bullet-points">
+      <li>
+        <a
+          href="/assets/docs/State-Form-Health-Inventory.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Health Inventory</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/State-Form-MDH-Immunization.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >MDH Immunization Certificate</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/State-Form-MDH-Lead-Certificate.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >MDH Lead Certificate</a
+        >
+      </li>
+      <li>
+        <a
+          href="/assets/docs/State-Form-Emergency-Form.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Emergency Form</a
+        >
+      </li>
+    </ul>
+  </div>
 </section>
