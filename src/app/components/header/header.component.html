@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="Main">
   <div class="container">
     <div class="nav-content">
       <div class="nav-brand">
@@ -9,44 +9,46 @@
 
       <!-- Desktop menu -->
       <div class="desktop-menu">
-        <a routerLink="/" class="nav-link">
+        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
           <lucide-icon name="house" class="nav-icon home-icon"></lucide-icon>
           Home
         </a>
-        <a routerLink="/about" class="nav-link">
+        <a routerLink="/about" class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page">
           <lucide-icon name="user" class="nav-icon users-icon"></lucide-icon>
           About
         </a>
-        <a routerLink="/programs" class="nav-link">
+        <a routerLink="/programs" class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page">
           <lucide-icon name="book-open" class="nav-icon book-icon"></lucide-icon>
           Programs
         </a>
-        <a routerLink="/contact" class="nav-link">
+        <a routerLink="/contact" class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page">
           <lucide-icon name="message-circle" class="nav-icon message-icon"></lucide-icon>
           Contact
         </a>
-        <a routerLink="/parent-resources" class="nav-link">
+        <a routerLink="/parent-resources" class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page">
           <lucide-icon name="calendar-clock" class="nav-icon calendar-clock-icon"></lucide-icon>
           Parent Resources
         </a>
         <a href="/assets/docs/Info-Doc-Registration-Form.pdf" class="enroll-btn"
-          target="_blank">
+          target="_blank" rel="noopener">
           Enroll Now
         </a>
       </div>
 
       <!-- Mobile menu button -->
       <div class="mobile-menu-btn">
-        <button (click)="toggleMenu()" class="menu-toggle">
+        <button type="button" (click)="toggleMenu()" class="menu-toggle"
+          [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'"
+          [attr.aria-expanded]="isMenuOpen" aria-controls="mobile-menu">
           @if (!isMenuOpen) {
-          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="menu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
           }
           @if (isMenuOpen) {
-          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="menu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -57,30 +59,31 @@
   </div>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu" [class.open]="isMenuOpen">
+  <div id="mobile-menu" class="mobile-menu" [class.open]="isMenuOpen">
     <div class="mobile-menu-content">
-      <a routerLink="/" class="mobile-nav-link" (click)="closeMenu()">
+      <a routerLink="/" class="mobile-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page" (click)="closeMenu()">
         <lucide-icon name="house" class="mobile-nav-icon home-icon"></lucide-icon>
         Home
       </a>
-      <a routerLink="/about" class="mobile-nav-link" (click)="closeMenu()">
+      <a routerLink="/about" class="mobile-nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">
         <lucide-icon name="user" class="mobile-nav-icon users-icon"></lucide-icon>
         About
       </a>
-      <a routerLink="/programs" class="mobile-nav-link" (click)="closeMenu()">
+      <a routerLink="/programs" class="mobile-nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">
         <lucide-icon name="book-open" class="mobile-nav-icon book-icon"></lucide-icon>
         Programs
       </a>
-      <a routerLink="/contact" class="mobile-nav-link" (click)="closeMenu()">
+      <a routerLink="/contact" class="mobile-nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">
         <lucide-icon name="message-circle" class="mobile-nav-icon message-icon"></lucide-icon>
         Contact
       </a>
-      <a routerLink="/parent-resources" class="mobile-nav-link" (click)="closeMenu()">
+      <a routerLink="/parent-resources" class="mobile-nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">
         <lucide-icon name="calendar-clock" class="mobile-nav-icon calendar-clock-icon"></lucide-icon>
         Parent Resources
       </a>
 
-      <a routerLink="/contact" class="mobile-enroll-btn" (click)="closeMenu()">
+      <a href="/assets/docs/Info-Doc-Registration-Form.pdf" class="mobile-enroll-btn" target="_blank"
+        rel="noopener" (click)="closeMenu()">
         Enroll Now
       </a>
     </div>

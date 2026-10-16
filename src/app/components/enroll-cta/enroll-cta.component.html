@@ -1,0 +1,42 @@
+<section class="cta-wrapper" aria-labelledby="enroll-cta-title">
+  <div class="cta-card">
+    <div class="cta-stripe" aria-hidden="true">
+      <span class="stripe-blue"></span>
+      <span class="stripe-yellow"></span>
+      <span class="stripe-red"></span>
+    </div>
+
+    <div class="cta-body">
+      <div class="cta-text">
+        <p class="cta-eyebrow">Join the Woodhome family</p>
+        <h2 id="enroll-cta-title" class="cta-title">
+          Ready to join our preschool family?
+        </h2>
+        <p class="cta-subtitle">
+          Come see the magic for yourself! We'd love to meet you and your little
+          one.
+        </p>
+      </div>
+
+      <div class="cta-actions">
+        <div class="cta-buttons">
+          <a
+            href="/assets/docs/Info-Doc-Registration-Form.pdf"
+            class="cta-btn cta-btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Enroll Now
+          </a>
+          <a routerLink="/contact" class="cta-btn cta-btn-secondary">
+            Schedule a Tour
+          </a>
+        </div>
+        <p class="cta-phone">
+          Or call us at
+          <a [href]="contactInfo.phoneHref">{{ contactInfo.phone }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

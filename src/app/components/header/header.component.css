@@ -111,9 +111,14 @@
   }
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--brand-blue);
   cursor: pointer;
+}
+
+.mobile-nav-link.active {
+  font-weight: 700;
 }
 
 .nav-icon {
@@ -204,11 +209,7 @@
 }
 
 .menu-toggle:hover {
-  color: #2563eb;
-}
-
-.menu-toggle:focus {
-  outline: none;
+  color: var(--brand-blue-dark);
 }
 
 .menu-icon {
@@ -223,11 +224,15 @@
   border-top: 1px solid #e5e7eb;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  /* visibility keeps links out of the tab order while the menu is closed */
+  visibility: hidden;
+  transition: max-height 0.3s ease, visibility 0s linear 0.3s;
 }
 
 .mobile-menu.open {
   max-height: 500px;
+  visibility: visible;
+  transition: max-height 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -261,7 +266,7 @@
 }
 
 .mobile-nav-link:hover {
-  color: var(--brand-blue);
+  color: var(--brand-blue-dark);
 }
 
 .mobile-nav-icon {

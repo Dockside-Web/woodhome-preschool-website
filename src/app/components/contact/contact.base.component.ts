@@ -102,6 +102,11 @@ export class BaseContactComponent implements OnInit, OnDestroy {
     delete (window as any).turnstileFinished;
   }
 
+  get emailInvalid() {
+    const email = this.contactForm.controls.email;
+    return email.touched && email.hasError('email');
+  }
+
   get isFormValid() {
     return this.contactForm.valid && this.turnstileVerified;
   }

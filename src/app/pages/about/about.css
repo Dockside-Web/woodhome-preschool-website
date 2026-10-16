@@ -328,75 +328,6 @@
   border-radius: 10px;
 }
 
-/* Call to Action Section */
-.enrollment-cta {
-  background-color: var(--brand-yellow);
-  padding: 3rem 0;
-}
-
-.cta-content {
-  text-align: center;
-}
-
-.cta-title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #000;
-  margin: 0 0 1rem 0;
-}
-
-.cta-subtitle {
-  font-size: 1.25rem;
-  color: #424242;
-  margin: 0 auto 2rem auto;
-  max-width: 48rem;
-}
-
-.cta-button-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  background-color: var(--brand-blue);
-  padding: 16px 36px;
-  font-size: 1.25rem;
-  border-radius: 24px;
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  user-select: none;
-  width: 100%;
-  max-width: 300px;
-  box-sizing: border-box;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-@media (min-width: 600px) {
-  .cta-button-content {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .cta-button {
-    width: auto;
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .section-title {
@@ -405,10 +336,6 @@
 
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .cta-title {
-    font-size: 28px;
   }
 
   .container {
@@ -429,8 +356,7 @@
   .our-story-section,
   .philosophy-section,
   .team-section,
-  .awards-section,
-  .enrollment-cta {
+  .awards-section {
     padding: 60px 0;
   }
 

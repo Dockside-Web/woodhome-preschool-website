@@ -88,7 +88,7 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--brand-blue);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.35);
 }
 
 .form-textarea {
@@ -97,17 +97,25 @@
 }
 
 .required-asterisk {
-  color: red;
+  color: #dc2626;
 }
 
 .error-message {
-  color: red;
+  color: #dc2626;
   font-size: 0.875rem;
   margin-top: 4px;
 }
 
-input.form-input.ng-invalid.ng-touched {
-  border-color: red;
+.form-input.ng-invalid.ng-touched,
+.form-select.ng-invalid.ng-touched,
+.form-textarea.ng-invalid.ng-touched {
+  border-color: #dc2626;
+}
+
+.form-hint {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0 0 1rem 0;
 }
 
 .submit-button {
@@ -297,6 +305,10 @@ input.form-input.ng-invalid.ng-touched {
 
 .contact-link {
   color: inherit;
-  text-decoration: underline;
   text-decoration: none;
+}
+
+.contact-link:hover {
+  color: var(--brand-blue-dark);
+  text-decoration: underline;
 }

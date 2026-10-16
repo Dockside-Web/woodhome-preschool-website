@@ -33,7 +33,7 @@
 }
 
 .bullet-points a {
-    color: #2563eb;
+    color: var(--brand-blue-dark);
     text-decoration: none;
     transition: color 0.2s;
 }

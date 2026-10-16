@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseHeroComponent } from '../../components/hero/hero.component';
 import { RouterModule } from '@angular/router';
+import { EnrollCtaComponent } from '../../components/enroll-cta/enroll-cta.component';
 
 interface TeamMember {
   name: string;
@@ -13,7 +14,7 @@ interface TeamMember {
 
 @Component({
   selector: 'app-about',
-  imports: [BaseHeroComponent, RouterModule],
+  imports: [BaseHeroComponent, RouterModule, EnrollCtaComponent],
   templateUrl: './about.html',
   styleUrls: ['./about.css'],
 })
@@ -44,7 +45,7 @@ export class AboutPage {
         'Mrs. Ann’s dynamic and energetic approach to learning is unique and well-loved by all children who are lucky enough to be in her class. With over 20 years in the field, Mrs. Ann’s intentional guidance and love for her students always shines through… She brings the fun to Woodhome!',
       photoUrl: 'assets/images/womanPlaceholder.webp',
       emoji: '🍎',
-      altText: 'Ann Mosely',
+      altText: 'Ann Moseley',
     },
     {
       name: 'Abbie Matson',

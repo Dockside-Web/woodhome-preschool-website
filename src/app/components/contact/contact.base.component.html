@@ -3,6 +3,7 @@
     <div class="form-column">
       <div class="form-card">
         <h3 class="form-title">Get in Touch</h3>
+        <p class="form-hint">Fields marked with an asterisk (*) are required.</p>
         <form
           name="contact"
           [formGroup]="contactForm"
@@ -23,6 +24,8 @@
                 name="firstName"
                 formControlName="firstName"
                 class="form-input"
+                autocomplete="given-name"
+                aria-required="true"
               />
             </div>
             <div class="form-group">
@@ -36,6 +39,8 @@
                 name="lastName"
                 formControlName="lastName"
                 class="form-input"
+                autocomplete="family-name"
+                aria-required="true"
               />
             </div>
           </div>
@@ -51,7 +56,15 @@
               formControlName="email"
               class="form-input"
               autocomplete="email"
+              aria-required="true"
+              [attr.aria-invalid]="emailInvalid"
+              aria-describedby="email-error"
             />
+            @if (emailInvalid) {
+              <p id="email-error" class="error-message">
+                Please enter a valid email address.
+              </p>
+            }
           </div>
 
           <div class="form-group">
@@ -66,6 +79,7 @@
               formControlName="phone"
               class="form-input"
               autocomplete="tel"
+              aria-required="true"
             />
           </div>
 
@@ -79,6 +93,7 @@
               name="childAge"
               formControlName="childAge"
               class="form-select"
+              aria-required="true"
             >
               <option value="">Select an age range</option>
               <option value="2-3 years">2-3 years</option>
@@ -98,6 +113,7 @@
               name="message"
               formControlName="message"
               class="form-textarea"
+              aria-required="true"
               placeholder="Include any details you'd like us to know"
             ></textarea>
           </div>
@@ -123,6 +139,7 @@
           <div class="contact-item">
             <svg
               class="contact-icon"
+              aria-hidden="true"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -152,6 +169,7 @@
           <div class="contact-item">
             <svg
               class="contact-icon"
+              aria-hidden="true"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -176,6 +194,7 @@
           <div class="contact-item">
             <svg
               class="contact-icon"
+              aria-hidden="true"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

@@ -30,6 +30,7 @@
             src="/assets/images/classroom.jpeg"
             alt="Preschool classroom"
             class="story-image"
+            loading="lazy"
           />
         </div>
       </div>
@@ -40,7 +41,7 @@
   <section class="philosophy-section">
     <div class="container">
       <div class="philosophy-section-header">
-        <h2 class="philosophy-section-title rainbow-text">
+        <h2 class="philosophy-section-title">
           What Matters at Woodhome Preschool Center
         </h2>
         <div class="philosophy-rainbow-underline"></div>
@@ -52,7 +53,7 @@
       </div>
       <div class="philosophy-grid">
         <div class="philosophy-card creative-thinking">
-          <div class="card-icon">💡</div>
+          <div class="card-icon" aria-hidden="true">💡</div>
           <h3 class="card-title">Safety and Security</h3>
           <p class="card-text">
             Safety and security matter at Woodhome Preschool Center. We know
@@ -63,7 +64,7 @@
           </p>
         </div>
         <div class="philosophy-card cooperation">
-          <div class="card-icon">🤝</div>
+          <div class="card-icon" aria-hidden="true">🤝</div>
           <h3 class="card-title">Relationships</h3>
           <p class="card-text">
             Relationships matter at Woodhome Preschool Center. We get to know
@@ -73,7 +74,7 @@
           </p>
         </div>
         <div class="philosophy-card academics">
-          <div class="card-icon">📚</div>
+          <div class="card-icon" aria-hidden="true">📚</div>
           <h3 class="card-title">A Strong Foundation</h3>
           <p class="card-text">
             A strong foundation matters to Woodhome Preschool Center. Our
@@ -83,7 +84,7 @@
           </p>
         </div>
         <div class="philosophy-card academics">
-          <div class="card-icon">🎉</div>
+          <div class="card-icon" aria-hidden="true">🎉</div>
           <h3 class="card-title">Fun</h3>
           <p class="card-text">
             Fun matters at Woodhome Preschool Center. Learning the FUNdamentals
@@ -115,37 +116,19 @@
                 [src]="member.photoUrl"
                 [alt]="member.altText"
                 class="team-photo"
+                loading="lazy"
               />
               <div class="photo-frame"></div>
             </div>
             <h3 class="team-name">{{ member.name }}</h3>
             <p class="team-title">{{ member.title }}</p>
             <p class="team-description">{{ member.description }}</p>
-            <div class="team-emoji">{{ member.emoji }}</div>
+            <div class="team-emoji" aria-hidden="true">{{ member.emoji }}</div>
           </div>
         }
       </div>
     </div>
   </section>
-
-  <!-- Call to Action -->
-  <section class="enrollment-cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">Ready to Join Our Preschool Family?</h2>
-        <p class="cta-subtitle">
-          Come see the magic for yourself! We'd love to meet you and your little
-          one.
-        </p>
-        <div class="cta-button-content">
-          <button routerLink="/contact" class="cta-button" target="_blank">
-            Schedule a Tour!
-          </button>
-          <button routerLink="/programs" class="cta-button" target="_blank">
-            Explore Our Programs
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
+
+<app-enroll-cta></app-enroll-cta>

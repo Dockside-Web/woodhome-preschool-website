@@ -105,7 +105,7 @@
 }
 
 .feature-card.yellow .feature-title {
-  color: var(--brand-yellow);
+  color: var(--brand-yellow-text);
 }
 
 .feature-card.red .feature-title {
@@ -138,7 +138,9 @@
 .cta-button-learn {
   display: inline-flex;
   align-items: center;
-  color: white;
+  color: #1f2937;
+  font-weight: 600;
+  text-decoration: none;
   background-color: var(--brand-yellow);
   padding: 12px 28px;
   font-size: 1.05rem;
@@ -163,6 +165,8 @@
   display: inline-flex;
   align-items: center;
   color: white;
+  font-weight: 600;
+  text-decoration: none;
   background-color: var(--brand-blue);
   padding: 12px 28px;
   font-size: 1.05rem;

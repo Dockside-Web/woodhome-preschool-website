@@ -16,8 +16,10 @@
         <div class="container">
           <div class="program-grid" [class.reverse]="program.reverse">
             <div class="program-content">
-              <h3 class="program-title">{{ program.title }}</h3>
-              <h4 class="program-subtitle">{{ program.subtitle }}</h4>
+              <h2 class="program-title">{{ program.title }}</h2>
+              @if (program.subtitle) {
+                <h3 class="program-subtitle">{{ program.subtitle }}</h3>
+              }
               <div class="program-underline"></div>
               @if (program.times != undefined) {
                 <p class="program-time">
@@ -35,6 +37,7 @@
                 src="{{ program.image }}"
                 alt="{{ program.title }}"
                 class="program-img"
+                loading="lazy"
               />
             </div>
           </div>
@@ -42,26 +45,6 @@
       </div>
     }
   </section>
-
-  <!-- Call to Action -->
-  <section class="enrollment-cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">Ready to Join Our Preschool Family?</h2>
-        <p class="cta-subtitle">
-          Come see the magic for yourself! We'd love to meet you and your little
-          one.
-        </p>
-        <div class="cta-button-content">
-          <a
-            href="/assets/docs/Info-Doc-Registration-Form.pdf"
-            class="cta-button"
-            target="_blank"
-          >
-            Enroll Now!
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
+
+<app-enroll-cta background="#ebf8ff"></app-enroll-cta>
