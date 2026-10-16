@@ -9,133 +9,56 @@
       </p>
     </div>
 
-    <div class="carousel-wrapper">
-      <!-- Left Arrow -->
-      <button
-        class="carousel-btn carousel-btn-left"
-        (click)="prev()"
-        [disabled]="currentIndex === 0"
-        aria-label="Previous testimonials"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2.5"
-            d="M15 19l-7-7 7-7"
-          />
+    <div class="reviews-grid">
+      <figure class="featured-card">
+        <svg class="featured-quote" aria-hidden="true" viewBox="0 0 32 32" fill="currentColor">
+          <path d="M9.3 6C4.9 8.6 2 12.6 2 17.6 2 22.4 4.9 26 8.8 26c3.1 0 5.5-2.4 5.5-5.4 0-3-2.2-5.2-5-5.2-.5 0-1.2.1-1.3.1.4-3 3.1-6.3 5.9-8L9.3 6zm15.4 0c-4.4 2.6-7.3 6.6-7.3 11.6 0 4.8 2.9 8.4 6.8 8.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.2-5.2-5-5.2-.5 0-1.2.1-1.3.1.4-3 3.1-6.3 5.9-8L24.7 6z" />
         </svg>
-      </button>
 
-      <!-- Track -->
-      <div
-        class="carousel-viewport"
-        #viewport
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
-      >
-        <div
-          class="carousel-track"
-          [style.transform]="slideTranslate"
-          [style.width]="(testimonials.length / visibleCount) * 100 + '%'"
-          [style.--total]="testimonials.length"
-        >
-          @for (testimonial of testimonials; track $index) {
-            <div class="carousel-slide">
-              <div
-                class="testimonial-card"
-                [ngClass]="testimonial.gradientClass"
-              >
-                <div
-                  class="quote-icon-wrapper"
-                  [ngClass]="testimonial.iconClass"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="quote-icon"
-                    aria-hidden="true"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                    />
-                  </svg>
-                </div>
-
-                <div class="stars" role="img" aria-label="5 out of 5 stars">
-                  @for (star of stars; track $index) {
-                    <svg class="star" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                  }
-                </div>
-
-                <blockquote class="testimonial-text">
-                  @for (paragraph of testimonial.text; track $index) {
-                    <p>{{ paragraph }}</p>
-                  }
-                </blockquote>
-
-                <div class="author">
-                  <div class="avatar" [ngClass]="testimonial.avatarClass">
-                    <span>{{ testimonial.initials }}</span>
-                  </div>
-                  <div class="author-info">
-                    <p class="name">{{ testimonial.name }}</p>
-                    <p class="role">{{ testimonial.role }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="stars" role="img" aria-label="5 out of 5 stars">
+          @for (star of stars; track $index) {
+            <svg class="star" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
           }
         </div>
+
+        <blockquote class="featured-text">{{ featured.text }}</blockquote>
+
+        <figcaption class="author">
+          <span class="avatar avatar-featured" aria-hidden="true">{{ featured.initials }}</span>
+          <span class="author-info">
+            <span class="name">{{ featured.name }}</span>
+            <span class="role">{{ featured.role }}</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="review-stack">
+        @for (review of testimonials; track review.name) {
+          <figure [class]="'review-card accent-' + review.color">
+            <blockquote class="review-text">{{ review.text }}</blockquote>
+
+            <figcaption class="review-footer">
+              <span class="author">
+                <span class="avatar" aria-hidden="true">{{ review.initials }}</span>
+                <span class="author-info">
+                  <span class="name">{{ review.name }}</span>
+                  <span class="role">{{ review.role }}</span>
+                </span>
+              </span>
+
+              <span class="stars" role="img" aria-label="5 out of 5 stars">
+                @for (star of stars; track $index) {
+                  <svg class="star" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                }
+              </span>
+            </figcaption>
+          </figure>
+        }
       </div>
-
-      <!-- Right Arrow -->
-      <button
-        class="carousel-btn carousel-btn-right"
-        (click)="next()"
-        [disabled]="currentIndex >= maxIndex"
-        aria-label="Next testimonials"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2.5"
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Dots -->
-    <div class="carousel-dots">
-      @for (dot of dotArray; track $index) {
-        <button
-          class="dot"
-          [class.dot-active]="$index === currentIndex"
-          (click)="goTo($index)"
-          [attr.aria-label]="'Go to slide ' + ($index + 1)"
-        ></button>
-      }
     </div>
   </div>
 </section>
