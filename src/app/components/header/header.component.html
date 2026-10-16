@@ -3,7 +3,18 @@
     <div class="nav-content">
       <div class="nav-brand">
         <a routerLink="/" class="logo-container">
-          <img [src]="websiteLogo" alt="Woodhome Preschool Logo" />
+          <img
+            src="assets/images/woodhomeLogo-400.webp"
+            srcset="
+              assets/images/woodhomeLogo-200.webp 200w,
+              assets/images/woodhomeLogo-400.webp 400w,
+              assets/images/woodhomeLogo-600.webp 600w
+            "
+            sizes="196px"
+            width="400"
+            height="114"
+            alt="Woodhome Preschool Center"
+          />
         </a>
       </div>
 

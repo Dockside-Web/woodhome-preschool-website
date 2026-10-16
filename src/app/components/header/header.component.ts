@@ -12,8 +12,6 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  websiteLogo: string = 'assets/images/woodhomeLogo.webp';
-
   isMenuOpen = false;
 
   toggleMenu(): void {
